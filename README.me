@@ -1,0 +1,56 @@
+Nome: Paulo César Fachetti Motta
+RA: 24.224.012-5
+
+--Objetivo:
+    O programa simula um sistema de compra de carros, onde os clientes podem se cadastrar, fazer login, visualizar clientes, editar informações de clientes, deletar clientes, depositar saldo, visualizar extratos de movimentações e comprar veículos. Os dados dos clientes são armazenados em um arquivo de texto para persistência.
+
+--Compilação e Execução:
+    Compilação
+    Para compilar o programa, você precisa de um compilador C (como GCC). Abra um terminal e navegue até o diretório onde os arquivos fonte (main.c, projeto.c, projeto.h) estão localizados. Em seguida, execute o seguinte comando:
+
+    gcc main.c projeto.c -o sistema_carros
+
+    Isso irá gerar um arquivo executável chamado sistema_carros (ou sistema_carros.exe no Windows).
+
+    Execução
+    Após a compilação bem-sucedida, você pode executar o programa digitando o seguinte comando no terminal:
+
+    ./sistema_carros # No Linux/macOS
+    sistema_carros.exe # No Windows
+
+--Uso do Programa/explicação:
+    Este programa simula um sistema de compra de carros e envolve os seguintes passos:
+    Estrutura de Dados:
+    O programa define uma estrutura Cliente para armazenar informações sobre cada cliente, como nome, CPF, data de nascimento, telefone, endereço, saldo, cidade, RG, email, veículos comprados, número de veículos comprados e senha.
+    Uma estrutura ListaClientes é definida para armazenar um array de Cliente e o número total de clientes.
+    Uma estrutura Veiculo é definida para armazenar informações sobre os veículos disponiveis para venda.
+
+    Funções Principais:
+    carregarClientes: Esta função carrega os dados dos clientes de um arquivo chamado "clientes.txt" para a estrutura ListaClientes. Se o arquivo não existir, a função cria uma nova lista de clientes.
+    salvarClientes: Esta função salva os dados dos clientes da estrutura ListaClientes de volta no arquivo "clientes.txt".
+    login: Esta função realiza o processo de login do cliente, solicitando CPF e senha e verificando se correspondem aos dados armazenados. O usuário tem 3 tentativas para logar.
+    criar: Esta função permite cadastrar um novo cliente, solicitando todas as informações necessárias e adicionando o novo cliente à lista.
+    deletar: Esta função remove um cliente da lista, solicitando o CPF do cliente a ser removido.
+    listar: Esta função exibe a lista de todos os clientes cadastrados com seus detalhes.
+    editar: Esta função permite editar as informações de um cliente existente, como telefone, endereço, cidade e email.
+    editar_senha: Esta função permite editar a senha de um cliente existente.
+    depositar: Esta função adiciona um valor ao saldo de um cliente, solicitando o CPF e o valor do depósito.
+    registrarMovimentacao: Esta função registra uma movimentação (depósito ou compra) em um arquivo de extrato específico do cliente.
+    exibirExtrato: Esta função exibe o extrato de movimentações de um cliente, lendo o arquivo de extrato correspondente.
+    exibirMenuVeiculos: Exibe a lista de veículos disponíveis para compra.
+    compra_veiculo: Esta função simula a compra de um veículo por um cliente. Ela exibe os veículos disponíveis, solicita o código do veículo, verifica o saldo do cliente, realiza a compra e atualiza os dados do cliente e do extrato.
+    menu: Esta função exibe o menu de opções do programa.
+
+    Fluxo do Programa:
+    O programa começa carregando os dados dos clientes do arquivo.
+    Em seguida, o programa exibe uma mensagem de boas-vindas e solicita que o usuário faça login ou se cadastre.
+    Após o login ou cadastro bem-sucedido, o programa entra em um loop onde exibe o menu de opções e executa a opção escolhida pelo usuário.
+    O loop continua até que o usuário escolha a opção de sair, momento em que os dados dos clientes são salvos no arquivo e o programa é encerrado.
+        
+    Interação com o Usuário:
+    O programa interage com o usuário através do console, exibindo mensagens e solicitando informações.
+    O usuário digita as opções e os dados solicitados, e o programa os lê usando a função scanf.
+
+    Persistência de Dados:
+    Os dados dos clientes são armazenados no arquivo "clientes.txt" para que não sejam perdidos quando o programa for encerrado.
+    Os extratos de movimentações de cada cliente são armazenados em arquivos separados, no formato "extrato_[CPF].txt".
